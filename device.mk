@@ -14,6 +14,10 @@ $(call inherit-product-if-exists, vendor/xiaomi/miatoll/miatoll-vendor.mk)
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# APN
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/etc/apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/apns-conf.xml
+
 # Init scripts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.device.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.device.rc

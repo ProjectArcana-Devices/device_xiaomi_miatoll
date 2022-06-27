@@ -7,8 +7,8 @@
 # Inherit from miatoll  device
 $(call inherit-product, device/xiaomi/miatoll/device.mk)
 
-# Inherit some common ArcaneOS stuff.
-$(call inherit-product, vendor/aosp/config/common.mk)
+# Inherit some common riceDroid stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Prebuilt apps
 $(call inherit-product-if-exists, vendor/prebuilt-apps/config.mk)
@@ -17,7 +17,7 @@ $(call inherit-product-if-exists, vendor/prebuilt-apps/config.mk)
 TARGET_BOOT_ANIMATION_RES := 1080
 
 # Device identifier
-PRODUCT_NAME := aosp_miatoll
+PRODUCT_NAME := lineage_miatoll
 PRODUCT_DEVICE := miatoll
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Miatoll
@@ -25,14 +25,14 @@ PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-# Inherit some props from Arcana
-ARCANA_OFFICIAL := true
-ARCANA_DEVICE := miatoll
-ARCANA_MAINTAINER := HaSSaN
+# riceDroic stuff with GApps
+
+RICE_MAINTAINER := HaSSaN
+TARGET_GAPPS_ARCH := arm64
+TARGET_ENABLE_BLUR := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_BUILD_GRAPHENEOS_CAMERA := true
-PREBUILT_LAWNCHAIR := true
-COPY_APN_SYSTEM := true
+WITH_GAPPS := true
 
 # Fingerprint
 
